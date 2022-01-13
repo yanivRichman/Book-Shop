@@ -3,10 +3,10 @@
 const KEY = 'books';
 const PAGE_SIZE = 2;
 var gBookNames = [
-    'Pooh secret garden',
-    'Lord of the files',
-    'Harry potter',
-    'The godfather',
+    'Pooh secret garden / פה הדוב בגינה הסודית',
+    'Lord of the flies / בעל זבוב',
+    'Harry potter / הארי פוטר',
+    'The godfather / הסנדק',
 ];
 var gImgUrls = [
     'img/pooh.PNG',

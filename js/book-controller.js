@@ -1,6 +1,7 @@
 'use strict';
 
 function onInit() {
+    onSetLang('en');
     renderBooks();
     // createBooks();
 }
@@ -14,13 +15,14 @@ function renderBooks() {
         <td> <p class="card-title">${book.bookName}</p> </td>
         <td> <h5 class="card-price">${book.price}</h5> </td>
         <td> <h5 class="card-price">${book.rate}</h5> </td>
-        <td> <button class="favorite styled blue" type="button" onclick="onReadBook('${book.id}')">Read</button> </td>
-        <td> <button class="favorite styled yellow" type="button" onclick="onUpdateBook('${book.id}')">Update</button> </td>
-        <td> <button class="favorite styled red" type="button" onclick="onRemoveBook('${book.id}')">Delete</button>  </td>
+        <td> <button class="favorite styled blue" type="button" data-trans="read" onclick="onReadBook('${book.id}')">Read</button> </td>
+        <td> <button class="favorite styled yellow" type="button" data-trans="update" onclick="onUpdateBook('${book.id}')">Update</button> </td>
+        <td> <button class="favorite styled red" type="button" data-trans="delete" onclick="onRemoveBook('${book.id}')">Delete</button>  </td>
         </tr> 
         `;
     });
     document.querySelector('tbody').innerHTML = strHtmls.join('');
+    doTrans();
 }
 
 function onRemoveBook(bookId) {
@@ -101,5 +103,16 @@ function sortByPrice() {
 function sortById() {
     gSortBy = 'ID';
     sortBooks();
+    renderBooks();
+}
+
+function onSetLang(lang) {
+    setLang(lang);
+    var elBody = document.querySelector('body');
+    if (lang === 'he') {
+        elBody.classList.add('rtl');
+    } else {
+        elBody.classList.remove('rtl');
+    }
     renderBooks();
 }

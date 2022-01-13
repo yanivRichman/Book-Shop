@@ -1,3 +1,7 @@
+.rtl{
+    direction: rtl;
+}
+
 body{
    background-color: lightseagreen; 
 }
