@@ -42,11 +42,11 @@ var gTrans = {
         he: 'עדכן מחיר חדש',
     },
     'next-Page': {
-        en: 'Next Page',
+        en: 'Next Page >',
         he: 'עבור לדף הבא',
     },
     'prev-Page': {
-        en: 'Prev Page',
+        en: '< Prev Page',
         he: 'עבור לדף הקודם',
     },
     read: {
